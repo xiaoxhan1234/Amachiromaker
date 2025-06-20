@@ -1,1 +1,6 @@
+⚠️ IMPORTANT NOTICE
 
+This folder was not fully uploaded to GitHub due to technical limitations:
+
+• Reason: Contains too many files (1,174 files / total 31.2MB)
+• Impact: Partial files are not synchronized.
