@@ -1,1 +1,5 @@
 # Amachiromaker
+
+这个项目公布了被甘城猫猫下线的捏脸网站
+
+本项目基于NekoQiye的Amachiromaker进行了图片获取
