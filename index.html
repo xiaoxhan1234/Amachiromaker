@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8"/>
+  <!-- 修改图标路径 -->
+  <link rel="icon" href="./favicon.png"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#000000"/>
+  <meta name="description" content="Web site created using create-react-app"/>
+  <!-- 修改苹果图标路径 -->
+  <link rel="apple-touch-icon" href="./icon_x9xMHja1yr84uqqE.png"/>
+  <!-- 修改 manifest 路径 -->
+  <link rel="manifest" href="./manifest.json"/>
+  <title>amachiromaker</title>
+  <!-- 修改 CSS 路径 -->
+  <link href="./static/css/2.27175f2b.chunk.css" rel="stylesheet">
+  <link href="./static/css/main.0f9b49cf.chunk.css" rel="stylesheet">
+  <!-- 添加自定义主题CSS -->
+  <link href="./static/css/custom-theme.css" rel="stylesheet">
+</head>
+<body>
+  <!-- 主题切换按钮 -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="切换深色/浅色模式">
+    <svg id="theme-toggle-light-icon" class="theme-icon" viewBox="0 0 24 24" style="display: none;">
+      <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"></path>
+    </svg>
+    <svg id="theme-toggle-dark-icon" class="theme-icon" viewBox="0 0 24 24">
+      <path d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path>
+    </svg>
+  </button>
+  
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  
+  <!-- 添加项目信息区域 -->
+  <div class="project-info animate__animated animate__fadeInUp">
+    <div class="project-info-content">
+      <h3>⭐ZH:Amachiromaker⭐</h3>
+      <div class="author-info">
+        <p><span>项目简介:</span>复活被甘城猫猫下线的捏脸网站呐</a></p>
+        <p><span>画师:</span>甘城なつき  <a href="https://amashiro.com/" target="_blank">▶ 甘城なつき官网</a></p>
+        <p><span>制作作者:</span>Xhan1234  <a href="https://github.com/xiaoxhan1234" target="_blank">▶ Github地址</a></p>
+        <p><span>原作者:</span>祈烨猫猫  <a href="https://github.com/NekoQiye" target="_blank">▶ Github地址</a></p>
+        
+        <img src="neko.png" class="author-neko" alt="祈烨猫猫" />
+      </div>
+      <a href="https://github.com/xiaoxhan1234/Amachiromaker" class="repo-button" target="_blank">
+        <span>❤️ 项目仓库</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 修改内联脚本中的资源路径 -->
+  <script>!function(e){function r(r){for(var n,a,i=r[0],c=r[1],l=r[2],s=0,p=[];s<i.length;s++)a=i[s],Object.prototype.hasOwnProperty.call(o,a)&&o[a]&&p.push(o[a][0]),o[a]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&&(e[n]=c[n]);for(f&&f(r);p.length;)p.shift()();return u.push.apply(u,l||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,i=1;i<t.length;i++){var c=t[i];0!==o[c]&&(n=!1)}n&&(u.splice(r--,1),e=a(a.s=t[0]))}return e}var n={},o={1:0},u=[];function a(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,a),t.l=!0,t.exports}a.e=function(e){var r=[],t=o[e];if(0!==t)if(t)r.push(t[2]);else{var n=new Promise((function(r,n){t=o[e]=[r,n]}));r.push(t[2]=n);var u,i=document.createElement("script");i.charset="utf-8",i.timeout=120,a.nc&&i.setAttribute("nonce",a.nc),i.src=function(e){return a.p+"static/js/"+({}[e]||e)+"."+{3:"d88bd067",4:"43d507be"}[e]+".chunk.js"}(e);var c=new Error;u=function(r){i.onerror=i.onload=null,clearTimeout(l);var t=o[e];if(0!==t){if(t){var n=r&&("load"===r.type?"missing":r.type),u=r&&r.target&&r.target.src;c.message="Loading chunk "+e+" failed.\n("+n+": "+u+")",c.name="ChunkLoadError",c.type=n,c.request=u,t[1](c)}o[e]=void 0}};var l=setTimeout((function(){u({type:"timeout",target:i})}),12e4);i.onerror=i.onload=u,document.head.appendChild(i)}return Promise.all(r)},a.m=e,a.c=n,a.d=function(e,r,t){a.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,r){if(1&r&&(e=a(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(a.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)a.d(t,n,function(r){return e[r]}.bind(null,n));return t},a.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(r,"a",r),r},a.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},a.p="./",a.oe=function(e){throw console.error(e),e};var i=this["webpackJsonpamachiromaker-clone"]=this["webpackJsonpamachiromaker-clone"]||[],c=i.push.bind(i);i.push=r,i=i.slice();for(var l=0;l<i.length;l++)r(i[l]);var f=c;t()}([])  </script>
+
+  <!-- 修改 JS 文件路径 -->
+  <script src="./static/js/2.78bd1ab9.chunk.js"></script>
+  <script src="./static/js/main.72370a41.chunk.js"></script>
+</body>
+<script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+// 添加猫娘气泡对话功能
+const nekoMessages = [
+  '喵~今天的你也要元气满满喵~',
+  '要摸摸头我的嘛？',
+  '尾..尾巴不可以摸喵！所以我藏起来啦~',
+  '尾巴被抓住啦~快放开喵~',
+  '呼噜呼噜~好困喵~',
+  '耳朵痒痒的呐，ruarua我喵~',
+  '喵！发现可疑的用户在戳我喵！',
+  '今天的网站应该没有什么bug吧喵~对吧？',
+  '喵呜~摸摸头最舒服了喵~(≧ω≦)',
+  '可以去GitHub帮主人点个star嘛？求你了喵~',
+  '蹭蹭你~今天也要加油喵！',
+  '好厄厄，祈烨又把我丢在这里当看板娘了喵...',
+  '悄悄告诉你个秘密...逗你玩的啦，喵~',
+  '喵喵拳！(ノ≧∇≦)ノ',
+  '下面的这个按钮按起来好有趣喵~',
+  '今天的你也闪闪发亮呢喵~'
+];
+
+// 动态添加气泡动画关键帧
+const bubbleStyle = document.createElement('style');
+bubbleStyle.textContent = `
+@keyframes bubbleAppear {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}`;
+document.head.appendChild(bubbleStyle);
+
+let isBubbleActive = false;
+
+document.querySelector('.author-neko').addEventListener('click', function(e) {
+  if(isBubbleActive) return;
+  
+  const bubble = document.createElement('div');
+  bubble.style.position = 'absolute';
+  bubble.style.padding = '8px 12px';
+  bubble.style.background = 'rgba(157,215,255,0.45)';
+  bubble.style.borderRadius = '12px';
+  bubble.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+  bubble.style.color = '#fdeeff';
+  bubble.style.fontSize = '14px';
+  bubble.style.fontWeight = '500';
+  bubble.style.whiteSpace = 'nowrap';
+  bubble.style.animation = 'bubbleAppear 0.3s ease-out';
+  
+  const rect = this.getBoundingClientRect();
+  // 修改后..好累喵
+  bubble.style.top = `${rect.top + window.scrollY - 100}px`;
+  bubble.style.left = `${rect.left + window.scrollX + rect.width/2 - 50}px`;
+  
+  bubble.textContent = nekoMessages[Math.floor(Math.random() * nekoMessages.length)];
+  document.body.appendChild(bubble);
+  
+  isBubbleActive = true;
+setTimeout(() => {
+    bubble.style.transition = 'opacity 0.5s';
+    bubble.style.opacity = '0';
+    setTimeout(() => {
+        bubble.remove();
+        isBubbleActive = false;
+    }, 500);
+}, 1400);
+});
+
+document.addEventListener('dragstart', e => {
+  if (e.target.tagName === 'IMG') {
+    e.preventDefault();
+  }
+});
+document.querySelectorAll('img').forEach(img => {
+  img.draggable = false;
+});
+
+// 主题切换功能
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+
+// 检查用户偏好
+const getThemePreference = () => {
+  // 检查本地存储中的主题偏好
+  const storedTheme = localStorage.getItem('theme');
+  if (storedTheme) {
+    return storedTheme;
+  }
+  
+  // 检查系统偏好
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+};
+
+// 设置主题
+const setTheme = (theme) => {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggleLightIcon.style.display = 'block';
+    themeToggleDarkIcon.style.display = 'none';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    themeToggleLightIcon.style.display = 'none';
+    themeToggleDarkIcon.style.display = 'block';
+  }
+  localStorage.setItem('theme', theme);
+};
+
+// 初始化主题
+setTheme(getThemePreference());
+
+// 添加主题切换事件监听器
+themeToggleBtn.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  setTheme(currentTheme);
+});
+
+// 监听系统主题变化
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  const newTheme = e.matches ? 'dark' : 'light';
+  setTheme(newTheme);
+});
+</script>
+</html>

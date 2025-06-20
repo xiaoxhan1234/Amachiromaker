@@ -1,0 +1,128 @@
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid #ffb6c1;
+  margin: 0 0 10px;
+  padding: 6px;
+  background: rgba(255,230,240,0.3);
+  border-radius: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  max-height: 200px;
+  overflow-y: auto;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 8px;
+  cursor: pointer;
+  background: linear-gradient(145deg, #fff0f5 0%, #ffe4e1 100%);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 4px;
+}
+
+.react-tabs__tab--selected {
+  background: linear-gradient(145deg, #ffd1dc 0%, #ffb6c1 100%);
+  border-color: #ff69b4;
+  color: #d81b60;
+  box-shadow: 0 4px 6px rgba(255,105,180,0.2);
+}
+
+.react-tabs__tab--disabled {
+  color: #c0c0c0;
+  cursor: default;
+  opacity: 0.7;
+}
+
+.react-tabs__tab:focus {
+  box-shadow: 0 0 8px #ff69b4;
+  border-color: #ff69b4;
+  outline: none;
+}
+
+.react-tabs__tab:focus:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  background: #fff0f6;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+  user-select: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pagination-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.pagination-button {
+  background: linear-gradient(135deg, #a2d9f7 0%, #ff85c2 100%);
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.2);
+}
+
+.pagination-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
+}
+
+.pagination-button:disabled {
+  background: linear-gradient(135deg, #6ca6cd 0%, #ff4791 100%);
+  color: #a0a0a0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  color: #d81b60;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=2.27175f2b.chunk.css.map */
+.item-image, .color-image, .tab-image, .layer-image {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: auto;
+}

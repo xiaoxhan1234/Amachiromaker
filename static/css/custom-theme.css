@@ -1,0 +1,997 @@
+@keyframes breath {
+  0% { opacity: 0.9; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.9; transform: scale(0.98); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  --bg-color: #f8f5ff;
+  --app-bg-gradient: linear-gradient(135deg, #e8e4fc 0%, #d8d0f8 100%);
+  --text-color: #4169E1;
+  --card-bg: rgba(255, 255, 255, 0.3);
+  --tab-list-bg: rgba(232, 224, 255, 0.2);
+  --tab-bg: linear-gradient(145deg, #f0f5ff 0%, #e1e4ff 100%);
+  --tab-selected-bg: linear-gradient(145deg, #d1dcff 0%, #b6c1ff 100%);
+  --tab-border: #b6c1ff;
+  --tab-selected-border: #87CEEB;
+  --tab-focus-shadow: #ff69b4;
+  --tab-focus-bg: #fff0f6;
+  --button-primary-bg: linear-gradient(135deg, #87CEEB 0%, #FF69B4 100%);
+  --button-primary-hover-bg: linear-gradient(135deg, #a2d9f7 0%, #ff85c2 100%);
+  --button-active-bg: linear-gradient(135deg, #6ca6cd 0%, #ff4791 100%);
+  --button-shadow: 0 4px 6px rgba(255, 107, 180, 0.2);
+  --button-shadow: rgba(0, 0, 0, 0.1);
+  --button-hover-shadow: rgba(244, 143, 177, 0.4);
+  --pagination-bg: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
+  --pagination-disabled-bg: #f0f0f0;
+  --pagination-disabled-color: #a0a0a0;
+  --item-container-border: #87CEEB;
+  --item-container-hover-border: #4169E1;
+  --item-container-bg: rgba(255, 255, 255, 0.2);
+  --body-bg-image: url('../../../white.jpg');
+}
+
+.project-info {
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.author-info a {
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  text-decoration: none;
+  background: linear-gradient(90deg, transparent 50%, rgba(255,182,193,0.3) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.author-info a:hover {
+  background-position: left bottom;
+  color: #ff69b4;
+}
+
+.repo-button {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff69b4 0%, #87ceeb 100%);
+  color: white;
+  font-weight: bold;
+  animation: breath 2s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-decoration: none !important;
+  border: none !important;
+}
+
+.repo-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(255,105,180,0.3);
+}
+
+@media (max-width: 768px) {
+  .project-info {
+    animation-duration: 1s;
+  }
+  .repo-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* 深色模式变量 */
+[data-theme='dark'] {
+  --bg-color: #1a1a2e;
+  --app-bg-gradient: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+  --text-color: #87CEEB;
+  --card-bg: rgba(22, 33, 62, 0.3);
+  --tab-list-bg: rgba(26, 42, 82, 0.2);
+  --tab-bg: linear-gradient(145deg, #1b1b2f 0%, #162447 100%);
+  --tab-selected-bg: linear-gradient(145deg, #1f4068 0%, #1b1b2f 100%);
+  --tab-border: #1f4068;
+  --tab-selected-border: #87CEEB;
+  --tab-focus-shadow: #f48fb1;
+  --tab-focus-bg: #303030;
+  --button-primary-bg: linear-gradient(135deg, #87CEEB 0%, #FF69B4 100%);
+  --button-primary-hover-bg: linear-gradient(135deg, #a2d9f7 0%, #ff85c2 100%);
+  --button-shadow: rgba(135, 206, 235, 0.3);
+  --button-hover-shadow: rgba(255, 105, 180, 0.2);
+  --pagination-bg: linear-gradient(135deg, #ad1457 0%, #880e4f 100%);
+  --pagination-disabled-bg: #424242;
+  --pagination-disabled-color: #757575;
+  --item-container-border: #ad1457;
+  --item-container-hover-border: #c2185b;
+  --item-container-bg: rgba(30, 30, 30, 0.5);
+  --body-bg-image: url('../../../black.jpg');
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: var(--body-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-y: auto;
+  transition: 
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  scroll-behavior: auto;
+  overflow-anchor: none;
+}
+
+.App {
+  background: transparent;
+  color: var(--text-color);
+  overflow-x: hidden;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.left-area, .config-area, .tab-content, .loading-text-container {
+  background: var(--card-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 12px;
+}
+
+.item-container, .color-container {
+  background: var(--item-container-bg);
+  border-color: var(--item-container-border);
+  width: calc(100% - 16px);
+  box-sizing: border-box;
+  margin: 0 auto 12px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.95em;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: scale(1);
+}
+
+.item-container:hover, .color-container:hover {
+  border-color: var(--item-container-hover-border);
+  /* 移除缩放效果，防止布局抽动 */
+  transform: scale(1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid var(--tab-border);
+  background: var(--tab-list-bg);
+  margin: 0 0 10px;
+  padding: 3px;
+  max-height: 200px;
+  overflow-y: auto;
+  gap: 3px;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.react-tabs__tab {
+  padding: 6px 8px;
+  margin: 2px;
+  background: var(--tab-bg);
+  border-radius: 8px;
+  font-size: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateY(0);
+}
+
+.react-tabs__tab--selected {
+  background: var(--tab-selected-bg);
+  border-color: var(--tab-selected-border);
+  color: var(--text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.react-tabs__tab:focus {
+  box-shadow: 0 0 8px var(--tab-focus-shadow);
+  border-color: var(--tab-selected-border);
+}
+
+.react-tabs__tab:focus:after {
+  background: var(--tab-focus-bg);
+}
+
+.react-tabs__tab:hover:not(.react-tabs__tab--selected) {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button-1, .button-2, .button-3 {
+  height: 40px;
+  padding: 6px 22px;
+  font-size: 15px;
+  margin: 8px 4px 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(1);
+  position: relative;
+  overflow: hidden;
+  }
+  
+  .button-1:hover, .button-2:hover, .button-3:hover {
+  transform: scale(1.05) translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 15px var(--button-hover-shadow);
+  }
+  
+  .button-1:active, .button-2:active, .button-3:active {
+  transform: scale(0.95) translateY(1px);
+  filter: brightness(0.95);
+  box-shadow: 0 2px 4px var(--button-shadow);
+  transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .button-1::before, .button-2::before, .button-3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.5s;
+  }
+  
+  .button-1:hover::before, .button-2:hover::before, .button-3:hover::before {
+  left: 100%;
+  }
+  
+  .button-1::after, .button-2::after, .button-3::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  }
+  
+  .button-1:active::after, .button-2:active::after, .button-3:active::after {
+  animation: ripple 0.6s ease-out;
+  }
+
+.item-container, .color-container {
+  padding: 4px;
+  margin: 6px auto;
+  width: calc(100% - 8px);
+}
+
+.pagination-button {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.pagination-info {
+  font-size: 12px;
+}
+
+.pagination-nav {
+  margin-bottom: 30px;
+}
+.pagination-info {
+  color: var(--text-color);
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--button-primary-bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px var(--button-shadow);
+  z-index: 1000;
+  transition: all 0.3s ease, background 0.5s ease;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-decoration: none !important;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--button-hover-shadow);
+  text-decoration: none !important;
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.item-image, .color-image, .tab-image, .layer-image {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: auto;
+  max-width: 100%;
+  height: auto;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: scale(1);
+}
+
+.item-image:hover, .color-image:hover, .tab-image:hover, .layer-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    width: 100%;
+    min-width: auto;
+    overflow-x: hidden;
+  }
+  
+  .left-area {
+    margin: 10px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .config-area {
+    margin: 10px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+  }
+  
+  .react-tabs__tab-list {
+    max-height: 120px;
+    padding: 3px;
+    overflow-y: auto;
+  }
+  
+  .react-tabs__tab {
+    padding: 4px 10px;
+    font-size: 0.75em;
+  }
+  
+  .button-1, .button-2, .button-3 {
+    height: 36px;
+    padding: 5px 8px;
+    font-size: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateY(0);
+  }
+  
+  .button-1:hover, .button-2:hover, .button-3:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--button-hover-shadow);
+  }
+  
+  .button-1:active, .button-2:active, .button-3:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px var(--button-shadow);
+  }
+  
+  .item-container, .color-container {
+    padding: 6px;
+    margin: 8px auto;
+  }
+  
+  .item-image, .item-image-selected, .color-image, .color-image-selected {
+    margin: 4px;
+  }
+}
+
+@media (max-width: 1000px) {
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .App {
+    width: 100%;
+    min-width: auto;
+    overflow-x: hidden;
+  }
+  
+  .left-area, .config-area {
+    margin: 8px;
+    width: calc(100% - 16px);
+    box-sizing: border-box;
+  }
+  
+  .react-tabs__tab-list {
+    max-height: 120px;
+    padding: 2px;
+    overflow-y: auto;
+    transition: max-height 0.3s ease, height 0.3s ease;
+  }
+  
+  .react-tabs__tab {
+    padding: 3px 6px;
+    font-size: 0;
+    margin: 1px;
+  }
+
+  .item-container, .color-container {
+    padding: 4px;
+    margin: 6px auto;
+    width: calc(100% - 8px);
+  }
+  
+  .pagination-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .pagination-info {
+    font-size: 12px;
+  }
+  
+  .pagination-nav {
+    margin-bottom: 30px;
+  }
+}
+
+
+
+/* 添加底部间距和平滑过渡 */
+body {
+  padding-bottom: 60px; /* 增加底部间距，为主题切换按钮留出空间 */
+}
+
+/* 项目信息区域样式 */
+.project-info {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto 70px;
+  padding: 15px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.project-info-content {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 2px solid var(--item-container-border);
+  animation: fadeIn 0.5s ease-in;
+}
+
+.project-info-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--button-hover-shadow);
+  border-color: var(--item-container-hover-border);
+}
+
+.project-info h3 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.author-info {
+  text-align: left;
+  padding: 10px 15px;
+  background: var(--item-container-bg);
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.author-info p {
+  margin: 10px 0;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.author-info span {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.author-info a {
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--item-container-border);
+  transition: all 0.2s ease;
+  padding-bottom: 2px;
+}
+
+.author-info a:hover {
+  color: var(--tab-selected-border);
+  border-bottom: 1px solid var(--tab-selected-border);
+}
+
+@media (max-width: 768px) {
+  .project-info {
+    margin: 15px auto 60px;
+    padding: 10px;
+  }
+  
+  .project-info-content {
+    padding: 15px;
+  }
+  
+  .project-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .author-info p {
+    font-size: 0.85rem;
+  }
+}
+
+.react-tabs__tab-panel {
+  transition: all 0.3s ease;
+}
+
+.react-tabs__tab-panel--selected {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.item-container, .color-container {
+  animation: slideIn 0.4s ease-out;
+}
+
+.theme-toggle:focus {
+  animation: pulse 1s ease-in-out;
+  text-decoration: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.config-area {
+  margin-bottom: 30px;
+}
+/* 隐藏所有滚动条 */
+/* Webkit浏览器 (Chrome, Safari, Edge等) */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* IE */
+* {
+  -ms-overflow-style: none;
+}
+
+/* 确保内容仍然可滚动 */
+body, .react-tabs__tab-list, .App, [class*="overflow"] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* 确保页面加载时滚动到顶部 */
+html {
+  scroll-behavior: auto;
+  overflow-anchor: none;
+}
+
+/* 防止动画导致页面滚动 */
+* {
+  overflow-anchor: none;
+}
+
+/* 添加全局动画变量 */
+@keyframes breath {
+  0% { opacity: 0.9; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.9; transform: scale(0.98); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  --animation-duration: 0.8s;
+  --animation-timing: cubic-bezier(0.25, 0.8, 0.25, 1);
+  scroll-behavior: auto;
+}
+
+/* 为主要容器添加载入动画 */
+.App {
+  animation: fadeIn var(--animation-duration) var(--animation-timing);
+}
+
+.left-area, .config-area {
+  animation: slideInFromLeft var(--animation-duration) var(--animation-timing);
+}
+
+.tab-content, .loading-text-container {
+  animation: slideInFromTop var(--animation-duration) var(--animation-timing);
+}
+
+/* 为按钮添加载入动画 */
+.button-1, .button-2, .button-3 {
+  animation: popIn 0.6s var(--animation-timing) both;
+  animation-delay: calc(var(--animation-duration) * 0.3);
+}
+
+/* 为标签页添加载入动画 */
+.react-tabs__tab {
+  animation: fadeInScale 0.5s var(--animation-timing) both;
+  animation-delay: calc(var(--animation-duration) * 0.2);
+}
+/* 为分页按钮添加载入动画 */
+.pagination-button, .pagination-info {
+  animation: fadeInUp 0.5s var(--animation-timing) both;
+  animation-delay: calc(var(--animation-duration) * 0.5);
+}
+
+/* 为主题切换按钮添加载入动画 */
+.theme-toggle {
+  animation: bounceIn 0.8s var(--animation-timing) both;
+  animation-delay: calc(var(--animation-duration) * 0.6);
+}
+
+/* 为项目信息区域添加载入动画 */
+.project-info {
+  animation: fadeInScale 0.7s var(--animation-timing) both;
+  animation-delay: calc(var(--animation-duration) * 0.5);
+}
+
+/* 为作者信息添加载入动画 */
+.author-info {
+  animation: fadeInUp 0.6s var(--animation-timing) both;
+  animation-delay: calc(var(--animation-duration) * 0.7);
+}
+
+/* 为链接添加载入动画 */
+a {
+  animation: colorPulse 1s var(--animation-timing) both;
+  animation-delay: calc(var(--animation-duration) * 0.8);
+}
+
+/* 定义新的动画关键帧 */
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromTop {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  70% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInBlur {
+  from { opacity: 0; filter: blur(5px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.1); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+@keyframes colorPulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* 确保动画只播放一次 */
+.App, .left-area, .config-area, .tab-content, .loading-text-container,
+.button-1, .button-2, .button-3, .react-tabs__tab, .item-image, .color-image,
+.tab-image, .layer-image, .pagination-button, .pagination-info, .theme-toggle,
+.project-info, .author-info, a {
+  animation-fill-mode: both;
+}
+
+/* 为不同的元素设置不同的动画延迟，创造级联效果 */
+.react-tabs__tab:nth-child(2) { animation-delay: calc(var(--animation-duration) * 0.25); }
+.react-tabs__tab:nth-child(3) { animation-delay: calc(var(--animation-duration) * 0.3); }
+.react-tabs__tab:nth-child(4) { animation-delay: calc(var(--animation-duration) * 0.35); }
+.react-tabs__tab:nth-child(5) { animation-delay: calc(var(--animation-duration) * 0.4); }
+
+.item-container:nth-child(2) { animation-delay: calc(var(--animation-duration) * 0.2); }
+.item-container:nth-child(3) { animation-delay: calc(var(--animation-duration) * 0.3); }
+.item-container:nth-child(4) { animation-delay: calc(var(--animation-duration) * 0.4); }
+.item-container:nth-child(5) { animation-delay: calc(var(--animation-duration) * 0.5); }
+
+/* 为移动设备优化动画 */
+@media (max-width: 768px) {
+  @keyframes breath {
+  0% { opacity: 0.9; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.9; transform: scale(0.98); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+    --animation-duration: 0.6s; /* 移动设备上动画时间稍短 */
+  }
+}
+
+/* 尊重用户的减少动画偏好设置 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.react-tabs__tab-panel {
+  transition: all 0.3s ease;
+}
+
+.react-tabs__tab-panel--selected {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.item-container, .color-container {
+  animation: slideIn 0.4s ease-out;
+}
+
+.theme-toggle:focus {
+  animation: pulse 1s ease-in-out;
+  text-decoration: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.config-area {
+  margin-bottom: 30px;
+}
+/* 隐藏所有滚动条 */
+/* Webkit浏览器 (Chrome, Safari, Edge等) */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* IE */
+* {
+  -ms-overflow-style: none;
+}
+
+/* 确保内容仍然可滚动 */
+body, .react-tabs__tab-list, .App, [class*="overflow"] {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* 确保页面加载时滚动到顶部 */
+html {
+  scroll-behavior: auto;
+  overflow-anchor: none;
+}
+
+/* 防止动画导致页面滚动 */
+* {
+  overflow-anchor: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-10px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.5;
+  }
+}
+
+.author-neko {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 176px;
+  height: 256px;
+  transform-origin: bottom center;
+  animation: swing 3s ease-in-out infinite alternate;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes swing {
+  from { transform: translateY(-50%) rotate(-3deg); }
+  to { transform: translateY(-50%) rotate(3deg);}
+}
+
+.author-neko:hover {
+  transform: translateY(-50%) scale(1.2);
+  filter: drop-shadow(0 0 12px rgba(255,105,180,0.5));
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .author-neko {
+    right: -40px;
+    width: 88px;
+    height: 128px;
+    animation: swing 4s ease-in-out infinite alternate;
+  }
+  @keyframes swing {
+    from { transform: translateY(-50%) rotate(-2deg); }
+    to { transform: translateY(-50%) rotate(2deg); }
+  }
+}
