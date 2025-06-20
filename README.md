@@ -37,3 +37,9 @@
 
 ### 开发环境
 ## Node.js
+
+## 📥 安装指南
+
+### 方式一：通过Releases下载
+1. 前往 [Releases页面](https://github.com/xiaoxhan1234/Amachiromaker/releases/tag/Amachiromaker)
+2. 选择需要的版本下载：ZH/EN
