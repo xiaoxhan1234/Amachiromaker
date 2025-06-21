@@ -6,59 +6,60 @@
 
 ---
 
-## 🌐 语言 / Language
-选择您的阅读语言：  
+## 🌐 Language
+Choose your language：  
 [**English**](README.md) | [**中文**](README.zh-CN.md)
 
 ---
-这个项目公布了被甘城猫猫下线的捏脸网站
+This project revives the character creator website that was taken down by nachoneko.
 
-本项目基于NekoQiye的Amachiromaker进行了图片获取
+The implementation is based on NekoQiye's Amachiromaker with image assets retrieval.
 
-公开Amachiromaker源码，可以自己随意搭建。
+The source code is open-sourced - feel free to deploy your own instance.
 
 <div align="center">
   <img src="readme-assets/gif1.gif" width="600" alt="演示动画"/>
-  <p><em>实时角色编辑效果预览[此动图来自NekoQiye]</em></p>
+  <p><em>Real-time character editing preview[GIF source: NekoQiye]</em></p>
 </div>
 
-## 🎨 核心功能
+## 🎨 Core Capabilities
 
-- **多层角色设计**
-  - 50+ 可组合部件（发型/眼睛/服装）
-  - 实时颜色调整
-  - 图层混合模式
+- **Multi-layer Character Composition**
+  - 50+ modular components (hairstyles/eyes/clothing)
+  - Real-time color manipulation
+  - Layer blending modes
 
-- **导出选项**
-  - 透明背景PNG
-  - 分层PSD文件
-  - JSON预设保存/加载
+- **Output Options**
+  - PNG with alpha channel
+  - Layer-preserved PSD export
+  - JSON preset serialization
 
-## 📸 界面截图
+## 📸 Interface Screenshot
 
 <div align="center">
-  <img src="readme-assets/screenshot.png" width="800" alt="操作界面截图"/>
-  <p><em>直观的编辑界面[来自NekoQiye]</em></p>
+  
+  <p><em>Intuitive editing interface [From NekoQiye]</em></p>
 </div>
 
-## 🚀 快速开始
+## 🚀 Quick Start
 <details>
-<summary><strong>中文指南</strong> (点击展开)</summary>
+<summary><strong>Chinese Guide</strong> (Click to expand)</summary>
 
-### 开发环境
-记得提前安装Node.js
+### Development Environment
+Remember to install Node.js in advance
 
-## 📥 安装指南
+## 📥 Installation Guide
 
-### 方式一：通过Releases下载
-1. 前往 [Releases页面](https://github.com/xiaoxhan1234/Amachiromaker/releases/tag/Amachiromaker)
-2. 选择需要的版本下载：ZH/EN
-3. 下载完后解压到本地,把文件夹改名为Amachiromaker。
-4. 确保已经安装Node.js这里不提供教程或安装方式。
-5. 进入项目目录
+### Method 1: Download via Releases
+1. Go to [Releases page](https://github.com/xiaoxhan1234/Amachiromaker/releases/tag/Amachiromaker)
+2. Select and download the required version: ZH/EN
+3. After downloading, extract to local and rename folder to Amachiromaker
+4. Ensure Node.js is already installed (no tutorial or installation method provided here)
+5. Enter project directory
 cd Amachiromaker
-6. 安装依赖
+6. Install dependencies
 npm install
-7. 最后启动
+7. Finally launch
 npm run dev
-8. 访问 http://localhost:端口  开始使用。
+8. Access http://localhost:port to start using
+</details>
