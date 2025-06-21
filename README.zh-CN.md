@@ -1,11 +1,19 @@
 # Amachiromaker ✨
 
+[](README.md) 
+  [](README.zh-CN.md)
+</div>
+
+---
+
+## 🌐 语言 / Language
+选择您的阅读语言：  
+[**English**](README.md) | [**中文**](README.zh-CN.md)
+
+---
 这个项目公布了被甘城猫猫下线的捏脸网站
 
 本项目基于NekoQiye的Amachiromaker进行了图片获取
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-欢迎投稿-brightgreen.svg)](CONTRIBUTING.md)
 
 公开Amachiromaker源码，可以自己随意搭建。
 
@@ -34,9 +42,11 @@
 </div>
 
 ## 🚀 快速开始
+<details>
+<summary><strong>中文指南</strong> (点击展开)</summary>
 
 ### 开发环境
-## Node.js
+记得提前安装Node.js
 
 ## 📥 安装指南
 
@@ -52,4 +62,3 @@ npm install
 7. 最后启动
 npm run dev
 8. 访问 http://localhost:端口  开始使用。
-
