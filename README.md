@@ -51,4 +51,4 @@ cd Amachiromaker
 npm install
 7. 最后启动
 npm run dev
-8. 访问 http://localhost:端口 开始使用。
+8. 访问 http://localhost:端口  开始使用。
