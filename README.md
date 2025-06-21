@@ -43,3 +43,12 @@
 ### 方式一：通过Releases下载
 1. 前往 [Releases页面](https://github.com/xiaoxhan1234/Amachiromaker/releases/tag/Amachiromaker)
 2. 选择需要的版本下载：ZH/EN
+3. 下载完后解压到本地,把文件夹改名为Amachiromaker。
+4. 确保已经安装Node.js这里不提供教程或安装方式。
+5. 进入项目目录
+cd Amachiromaker
+6. 安装依赖
+npm install
+7. 最后启动
+npm run dev
+8. 随后按照给出的地址输入浏览器访问
