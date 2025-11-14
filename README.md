@@ -52,7 +52,7 @@ Remember to install Node.js in advance
 
 ### Method 1: Download via Releases
 1. Go to [Releases page](https://github.com/xiaoxhan1234/Amachiromaker/releases/tag/Amachiromaker)
-2. Select and download the required version: ZH/EN
+2. Select and download the required version
 3. After downloading, extract to local and rename folder to Amachiromaker
 4. Ensure Node.js is already installed (no tutorial or installation method provided here)
 5. Enter project directory
